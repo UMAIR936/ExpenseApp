@@ -15,27 +15,16 @@ const NewExpense = (props) => {
     setIsEditing(false);
   };
 
-  const isEditingHandler = () => {
-    setIsEditing(true);
-  };
-
   const stopEditingHandler = () => {
     setIsEditing(false);
   };
 
   return (
     <div className="new-expense">
-      {!isEditing && (
-        <button type="button" onClick={isEditingHandler}>
-          Add New Expense
-        </button>
-      )}
-      {isEditing && (
-        <ExpenseForm
-          onSaveExpenseData={saveExpenseDataHandler}
-          onCancel={stopEditingHandler}
-        />
-      )}
+      <ExpenseForm
+        onSaveExpenseData={saveExpenseDataHandler}
+        onCancel={stopEditingHandler}
+      />
     </div>
   );
 };
